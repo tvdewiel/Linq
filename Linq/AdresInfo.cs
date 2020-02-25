@@ -66,5 +66,22 @@ namespace Linq
             }
             return s;
         }
+        public string gemeenteMetMaxAantalStraatnamen()
+        {
+            var r = adressen.GroupBy(x => x.gemeente).Select(x=>new { x.Key, n = x.Count() })
+                .OrderByDescending(x=>x.n).First();
+            
+            return r.Key;
+        }
+        public string langsteStraatnaam()
+        {
+            var r = adressen.Select(x => x.straatnaam).OrderByDescending(x => x.Length).First();
+            return r;
+        }
+        public data langsteStraatnaamMetGemeente()
+        {
+            var r = adressen.OrderByDescending(x => x.straatnaam.Length).First();
+            return r;
+        }
     }
 }
