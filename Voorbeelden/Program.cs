@@ -30,10 +30,15 @@ namespace Voorbeelden
             //e.FirstLast();
             //e.Take();
             //e.Skip();
-            SetOperators so = new SetOperators();
-            so.intersect();
-            so.union();
-            so.except();
+            //SetOperators so = new SetOperators();
+            //so.intersect();
+            //so.union();
+            //so.except();
+            //Join j = new Join();
+            //j.join();
+            //j.groupjoin();
+            AllAny aa = new AllAny();
+            aa.isAllAny();
         }
     }
 }
