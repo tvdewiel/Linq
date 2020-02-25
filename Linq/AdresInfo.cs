@@ -83,5 +83,16 @@ namespace Linq
             var r = adressen.OrderByDescending(x => x.straatnaam.Length).First();
             return r;
         }
+        public List<data> uniekeStraatnamen()
+        {
+            var r = adressen.GroupBy(x => x.straatnaam).Where(g=>g.Count()==1).Select(g=>g.First());
+            return r.ToList();
+        }
+        public List<data> uniekeStraatnamenInGemeente(string gemeente)
+        {
+            var r = adressen.GroupBy(x => x.straatnaam).Where(g => g.Count() == 1)
+                .Select(g => g.First()).Where(d=>d.gemeente==gemeente);
+            return r.ToList();
+        }
     }
 }

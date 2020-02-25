@@ -34,9 +34,13 @@ namespace Linq
             //foreach (string s in ai.onlyInX("Berlare",new List<string> { "Zele", "Gent", "Lokeren","Brugge" })){
             //    Console.WriteLine(s);
             //}
-            Console.WriteLine(ai.gemeenteMetMaxAantalStraatnamen());
-            Console.WriteLine(ai.langsteStraatnaam());
-            Console.WriteLine(ai.langsteStraatnaamMetGemeente());
+            //Console.WriteLine(ai.gemeenteMetMaxAantalStraatnamen());
+            //Console.WriteLine(ai.langsteStraatnaam());
+            //Console.WriteLine(ai.langsteStraatnaamMetGemeente());
+            foreach(var d in ai.uniekeStraatnamenInGemeente("Berlare"))
+            {
+                Console.WriteLine(d);
+            }
         }
     }
 }
